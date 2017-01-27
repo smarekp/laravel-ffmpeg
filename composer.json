@@ -1,17 +1,23 @@
 {
-    "name": "pbmedia/laravel-ffmpeg",
+    "name": "smarekp/laravel-ffmpeg",
     "description": "FFMpeg for Laravel 5.1 and higher",
     "keywords": [
-        "pbmedia",
+        "smarekp",
         "laravel-ffmpeg"
     ],
-    "homepage": "https://github.com/pbmedia/laravel-ffmpeg",
+    "homepage": "https://github.com/smarekp/laravel-ffmpeg",
     "license": "MIT",
     "authors": [
         {
             "name": "Pascal Baljet",
             "email": "pascal@pascalbaljetmedia.com",
             "homepage": "http://www.pascalbaljetmedia.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Stefan Philibert",
+            "email": "marekphilibert@gmail.com",
+            "homepage": "https://github.com/smarekp",
             "role": "Developer"
         }
     ],

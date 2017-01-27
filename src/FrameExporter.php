@@ -1,6 +1,6 @@
 <?php
 
-namespace Pbmedia\LaravelFFMpeg;
+namespace Smarekp\LaravelFFMpeg;
 
 class FrameExporter extends MediaExporter
 {

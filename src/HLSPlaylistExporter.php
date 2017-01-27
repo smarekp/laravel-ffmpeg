@@ -1,9 +1,9 @@
 <?php
 
-namespace Pbmedia\LaravelFFMpeg;
+namespace Smarekp\LaravelFFMpeg;
 
 use FFMpeg\Format\VideoInterface;
-use Pbmedia\LaravelFFMpeg\SegmentedExporter;
+use Smarekp\LaravelFFMpeg\SegmentedExporter;
 
 class HLSPlaylistExporter extends MediaExporter
 {

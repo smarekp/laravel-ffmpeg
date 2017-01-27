@@ -1,6 +1,6 @@
 <?php
 
-namespace Pbmedia\LaravelFFMpeg;
+namespace Smarekp\LaravelFFMpeg;
 
 use Illuminate\Contracts\Filesystem\Filesystem;
 use League\Flysystem\Adapter\Local as LocalAdapater;
