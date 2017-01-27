@@ -22,7 +22,7 @@ class FFMpeg
         $ffmpegConfig = $config->get('laravel-ffmpeg');
 
         $this->ffmpeg = BaseFFMpeg::create($ffmpegConfig, $logger);
-        $this->fromDisk($ffmpegConfig['default_disk'] ?? $config->get('filesystems.default'));
+        $this->fromDisk(isset($ffmpegConfig['default_disk']) ? $ffmpegConfig['default_disk'] : $config->get('filesystems.default'));
     }
 
     public static function getFilesystems(): Filesystems
