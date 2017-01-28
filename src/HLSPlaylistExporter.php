@@ -37,14 +37,14 @@ class HLSPlaylistExporter extends MediaExporter
         return $this->formats;
     }
 
-    public function setPlaylistPath(string $playlistPath)
+    public function setPlaylistPath(/*string*/ $playlistPath)
     {
         $this->playlistPath = $playlistPath;
 
         return $this;
     }
 
-    public function setSegmentLength(int $segmentLength)
+    public function setSegmentLength(/*int*/ $segmentLength)
     {
         $this->segmentLength = $segmentLength;
 
@@ -92,7 +92,7 @@ class HLSPlaylistExporter extends MediaExporter
         return implode(PHP_EOL, $lines);
     }
 
-    public function savePlaylist(string $playlistPath)
+    public function savePlaylist(/*string*/ $playlistPath)
     {
         $this->setPlaylistPath($playlistPath);
         $this->exportStreams();

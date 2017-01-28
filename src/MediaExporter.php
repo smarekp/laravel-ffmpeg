@@ -49,7 +49,7 @@ class MediaExporter
         return $this;
     }
 
-    public function save(string $path)
+    public function save(/*string*/ $path)
     {
         $file = $this->getDisk()->newFile($path);
 
@@ -93,7 +93,7 @@ class MediaExporter
         return $file->getDisk()->createDirectory($directory);
     }
 
-    private function saveAudioOrVideo(string $fullPath)
+    private function saveAudioOrVideo(/*string*/ $fullPath)
     {
         $this->media->save($this->getFormat(), $fullPath);
 

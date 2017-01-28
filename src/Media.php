@@ -46,14 +46,14 @@ class Media
         return new HLSPlaylistExporter($this);
     }
 
-    public function getFrameFromString(string $timecode)
+    public function getFrameFromString(/*string*/ $timecode)
     {
         return $this->getFrameFromTimecode(
             TimeCode::fromString($timecode)
         );
     }
 
-    public function getFrameFromSeconds(float $quantity)
+    public function getFrameFromSeconds(/*float*/ $quantity)
     {
         return $this->getFrameFromTimecode(
             TimeCode::fromSeconds($quantity)

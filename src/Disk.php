@@ -19,7 +19,7 @@ class Disk
         $this->disk = $disk;
     }
 
-    public static function fromName(string $name)
+    public static function fromName(/*string*/ $name)
     {
         $adapter = FFMpeg::getFilesystems()->disk($name);
 
@@ -33,7 +33,7 @@ class Disk
         return $adapter instanceof LocalAdapater;
     }
 
-    public function newFile(string $path)
+    public function newFile(/*string*/ $path)
     {
         return new File($this, $path);
     }
@@ -43,7 +43,7 @@ class Disk
         return $this->disk->getDriver()->getAdapter()->getPathPrefix();
     }
 
-    public function createDirectory(string $path)
+    public function createDirectory(/*string*/ $path)
     {
         return $this->disk->makeDirectory($path);
     }

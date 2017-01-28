@@ -30,7 +30,7 @@ class FFMpeg
         return static::$filesystems;
     }
 
-    public function fromDisk(string $diskName)
+    public function fromDisk(/*string*/ $diskName)
     {
         $filesystem = static::getFilesystems()->disk($diskName);
         $this->disk = new Disk($filesystem);

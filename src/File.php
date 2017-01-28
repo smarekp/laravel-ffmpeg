@@ -8,7 +8,7 @@ class File
 
     protected $path;
 
-    public function __construct(Disk $disk, string $path)
+    public function __construct(Disk $disk, /*string*/ $path)
     {
         $this->disk = $disk;
         $this->path = $path;
@@ -34,7 +34,7 @@ class File
         return $this->getDisk()->getPath() . $this->getPath();
     }
 
-    public function put(string $localSourcePath)
+    public function put(/*string*/ $localSourcePath)
     {
         $resource = fopen($localSourcePath, 'r');
 

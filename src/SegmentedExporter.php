@@ -12,14 +12,14 @@ class SegmentedExporter extends MediaExporter
 
     protected $saveMethod = 'saveStream';
 
-    public function setPlaylistPath(string $playlistPath)
+    public function setPlaylistPath(/*string*/ $playlistPath)
     {
         $this->playlistPath = $playlistPath;
 
         return $this;
     }
 
-    public function setSegmentLength(int $segmentLength)
+    public function setSegmentLength(/*int*/ $segmentLength)
     {
         $this->segmentLength = $segmentLength;
 
@@ -38,7 +38,7 @@ class SegmentedExporter extends MediaExporter
         );
     }
 
-    public function saveStream(string $playlistPath)
+    public function saveStream(/*string*/ $playlistPath)
     {
         $this->setPlaylistPath($playlistPath);
 
@@ -90,7 +90,7 @@ class SegmentedExporter extends MediaExporter
         return $this->getFormattedFilename('_%05d.ts');
     }
 
-    protected function getFormattedFilename(string $suffix = '')
+    protected function getFormattedFilename(/*string*/ $suffix = '')
     {
         return implode([
             $this->getPlaylistName(),
