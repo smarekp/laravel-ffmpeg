@@ -1,11 +1,11 @@
 <?php
 
-namespace Pbmedia\LaravelFFMpeg\Tests;
+namespace Smarekp\LaravelFFMpeg\Tests;
 
 use Mockery;
-use Pbmedia\LaravelFFMpeg\HLSPlaylistExporter;
-use Pbmedia\LaravelFFMpeg\Media;
-use Pbmedia\LaravelFFMpeg\SegmentedExporter;
+use Smarekp\LaravelFFMpeg\HLSPlaylistExporter;
+use Smarekp\LaravelFFMpeg\Media;
+use Smarekp\LaravelFFMpeg\SegmentedExporter;
 
 class HLSPlaylistExporterTest extends TestCase
 {

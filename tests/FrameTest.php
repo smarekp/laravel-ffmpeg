@@ -1,10 +1,10 @@
 <?php
 
-namespace Pbmedia\LaravelFFMpeg\Tests;
+namespace Smarekp\LaravelFFMpeg\Tests;
 
 use Mockery;
-use Pbmedia\LaravelFFMpeg\Frame;
-use Pbmedia\LaravelFFMpeg\FrameExporter;
+use Smarekp\LaravelFFMpeg\Frame;
+use Smarekp\LaravelFFMpeg\FrameExporter;
 
 class FrameTest extends TestCase
 {

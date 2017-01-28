@@ -1,6 +1,6 @@
 <?php
 
-namespace Pbmedia\LaravelFFMpeg\Tests;
+namespace Smarekp\LaravelFFMpeg\Tests;
 
 use FFMpeg\Coordinate\Dimension;
 use FFMpeg\Coordinate\TimeCode;
@@ -8,11 +8,11 @@ use FFMpeg\Filters\Video\ClipFilter;
 use FFMpeg\Media\Video;
 use Illuminate\Contracts\Filesystem\Factory as Filesystems;
 use Mockery;
-use Pbmedia\LaravelFFMpeg\Disk;
-use Pbmedia\LaravelFFMpeg\FFMpeg;
-use Pbmedia\LaravelFFMpeg\File;
-use Pbmedia\LaravelFFMpeg\Media;
-use Pbmedia\LaravelFFMpeg\MediaExporter;
+use Smarekp\LaravelFFMpeg\Disk;
+use Smarekp\LaravelFFMpeg\FFMpeg;
+use Smarekp\LaravelFFMpeg\File;
+use Smarekp\LaravelFFMpeg\Media;
+use Smarekp\LaravelFFMpeg\MediaExporter;
 
 class AudioVideoTest extends TestCase
 {

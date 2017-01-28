@@ -1,11 +1,11 @@
 <?php
 
-namespace Pbmedia\LaravelFFMpeg\Tests;
+namespace Smarekp\LaravelFFMpeg\Tests;
 
 use Mockery;
-use Pbmedia\LaravelFFMpeg\Media;
-use Pbmedia\LaravelFFMpeg\SegmentedExporter;
-use Pbmedia\LaravelFFMpeg\SegmentedFilter;
+use Smarekp\LaravelFFMpeg\Media;
+use Smarekp\LaravelFFMpeg\SegmentedExporter;
+use Smarekp\LaravelFFMpeg\SegmentedFilter;
 
 class SegmentedTest extends TestCase
 {
