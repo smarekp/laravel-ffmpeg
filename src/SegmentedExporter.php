@@ -12,21 +12,21 @@ class SegmentedExporter extends MediaExporter
 
     protected $saveMethod = 'saveStream';
 
-    public function setPlaylistPath(string $playlistPath): MediaExporter
+    public function setPlaylistPath(string $playlistPath)
     {
         $this->playlistPath = $playlistPath;
 
         return $this;
     }
 
-    public function setSegmentLength(int $segmentLength): MediaExporter
+    public function setSegmentLength(int $segmentLength)
     {
         $this->segmentLength = $segmentLength;
 
         return $this;
     }
 
-    public function getFilter(): SegmentedFilter
+    public function getFilter()
     {
         if ($this->filter) {
             return $this->filter;
@@ -38,7 +38,7 @@ class SegmentedExporter extends MediaExporter
         );
     }
 
-    public function saveStream(string $playlistPath): MediaExporter
+    public function saveStream(string $playlistPath)
     {
         $this->setPlaylistPath($playlistPath);
 
@@ -54,7 +54,7 @@ class SegmentedExporter extends MediaExporter
         return $this;
     }
 
-    public function getPlaylistFullPath(): string
+    public function getPlaylistFullPath()
     {
         return implode(DIRECTORY_SEPARATOR, [
             pathinfo($this->playlistPath, PATHINFO_DIRNAME),
@@ -62,7 +62,7 @@ class SegmentedExporter extends MediaExporter
         ]);
     }
 
-    public function getSegmentFullPath(): string
+    public function getSegmentFullPath()
     {
         return implode(DIRECTORY_SEPARATOR, [
             pathinfo($this->playlistPath, PATHINFO_DIRNAME),
@@ -70,27 +70,27 @@ class SegmentedExporter extends MediaExporter
         ]);
     }
 
-    public function getPlaylistPath(): string
+    public function getPlaylistPath()
     {
         return $this->playlistPath;
     }
 
-    public function getPlaylistName(): string
+    public function getPlaylistName()
     {
         return pathinfo($this->getPlaylistPath(), PATHINFO_FILENAME);
     }
 
-    public function getPlaylistFilename(): string
+    public function getPlaylistFilename()
     {
         return $this->getFormattedFilename('.m3u8');
     }
 
-    public function getSegmentFilename(): string
+    public function getSegmentFilename()
     {
         return $this->getFormattedFilename('_%05d.ts');
     }
 
-    protected function getFormattedFilename(string $suffix = ''): string
+    protected function getFormattedFilename(string $suffix = '')
     {
         return implode([
             $this->getPlaylistName(),

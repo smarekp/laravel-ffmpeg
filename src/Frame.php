@@ -9,7 +9,7 @@ use FFMpeg\Media\Frame as BaseFrame;
  */
 class Frame extends Media
 {
-    public function export(): MediaExporter
+    public function export()
     {
         return new FrameExporter($this);
     }

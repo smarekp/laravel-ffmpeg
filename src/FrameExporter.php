@@ -8,26 +8,26 @@ class FrameExporter extends MediaExporter
 
     protected $saveMethod = 'saveFrame';
 
-    public function accurate(): MediaExporter
+    public function accurate()
     {
         $this->mustBeAccurate = true;
 
         return $this;
     }
 
-    public function unaccurate(): MediaExporter
+    public function unaccurate()
     {
         $this->mustBeAccurate = false;
 
         return $this;
     }
 
-    public function getAccuracy(): bool
+    public function getAccuracy()
     {
         return $this->mustBeAccurate;
     }
 
-    public function saveFrame(string $fullPath): MediaExporter
+    public function saveFrame(string $fullPath)
     {
         $this->media->save($fullPath, $this->getAccuracy());
 

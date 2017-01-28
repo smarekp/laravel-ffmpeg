@@ -19,26 +19,26 @@ class Disk
         $this->disk = $disk;
     }
 
-    public static function fromName(string $name): Disk
+    public static function fromName(string $name)
     {
         $adapter = FFMpeg::getFilesystems()->disk($name);
 
         return new static($adapter);
     }
 
-    public function isLocal(): bool
+    public function isLocal()
     {
         $adapter = $this->disk->getDriver()->getAdapter();
 
         return $adapter instanceof LocalAdapater;
     }
 
-    public function newFile(string $path): File
+    public function newFile(string $path)
     {
         return new File($this, $path);
     }
 
-    public function getPath(): string
+    public function getPath()
     {
         return $this->disk->getDriver()->getAdapter()->getPathPrefix();
     }

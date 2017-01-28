@@ -21,53 +21,53 @@ class Media
         $this->media = $media;
     }
 
-    public function isFrame(): bool
+    public function isFrame()
     {
         return $this instanceof Frame;
     }
 
-    public function getFile(): File
+    public function getFile()
     {
         return $this->file;
     }
 
-    public function getDurationInSeconds(): int
+    public function getDurationInSeconds()
     {
         return $this->media->getStreams()->first()->get('duration');
     }
 
-    public function export(): MediaExporter
+    public function export()
     {
         return new MediaExporter($this);
     }
 
-    public function exportForHLS(): HLSPlaylistExporter
+    public function exportForHLS()
     {
         return new HLSPlaylistExporter($this);
     }
 
-    public function getFrameFromString(string $timecode): Frame
+    public function getFrameFromString(string $timecode)
     {
         return $this->getFrameFromTimecode(
             TimeCode::fromString($timecode)
         );
     }
 
-    public function getFrameFromSeconds(float $quantity): Frame
+    public function getFrameFromSeconds(float $quantity)
     {
         return $this->getFrameFromTimecode(
             TimeCode::fromSeconds($quantity)
         );
     }
 
-    public function getFrameFromTimecode(TimeCode $timecode): Frame
+    public function getFrameFromTimecode(TimeCode $timecode)
     {
         $frame = $this->media->frame($timecode);
 
         return new Frame($this->getFile(), $frame);
     }
 
-    public function addFilter(): Media
+    public function addFilter()
     {
         $arguments = func_get_args();
 
@@ -85,7 +85,7 @@ class Media
         return ($argument === $this->media) ? $this : $argument;
     }
 
-    public function __invoke(): MediaTypeInterface
+    public function __invoke()
     {
         return $this->media;
     }

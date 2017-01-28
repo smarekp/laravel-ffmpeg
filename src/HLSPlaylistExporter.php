@@ -17,37 +17,41 @@ class HLSPlaylistExporter extends MediaExporter
 
     protected $saveMethod = 'savePlaylist';
 
-    public function addFormat(VideoInterface $format): MediaExporter
+    public function addFormat(VideoInterface $format)
     {
         $this->formats[] = $format;
 
         return $this;
     }
 
-    public function getFormatsSorted(): array
+    public function getFormatsSorted()
     {
         usort($this->formats, function ($formatA, $formatB) {
-            return $formatA->getKiloBitrate() <=> $formatB->getKiloBitrate();
+            // Replaced spaceship operator with ternary equivalent.
+            // See: https://wiki.php.net/rfc/combined-comparison-operator#usefulness
+            $a = $formatA->getKiloBitrate();
+            $b = $formatB->getKiloBitrate();
+            return ($a < $b) ? -1 : (($a > $b) ? 1 : 0);
         });
 
         return $this->formats;
     }
 
-    public function setPlaylistPath(string $playlistPath): MediaExporter
+    public function setPlaylistPath(string $playlistPath)
     {
         $this->playlistPath = $playlistPath;
 
         return $this;
     }
 
-    public function setSegmentLength(int $segmentLength): MediaExporter
+    public function setSegmentLength(int $segmentLength)
     {
         $this->segmentLength = $segmentLength;
 
         return $this;
     }
 
-    protected function getSegmentedExporterFromFormat(VideoInterface $format): SegmentedExporter
+    protected function getSegmentedExporterFromFormat(VideoInterface $format)
     {
         $media = clone $this->media;
 
@@ -57,8 +61,7 @@ class HLSPlaylistExporter extends MediaExporter
             ->setSegmentLength($this->segmentLength);
     }
 
-    public function getSegmentedExporters(): array
-    {
+    public function getSegmentedExporters()
         if ($this->segmentedExporters) {
             return $this->segmentedExporters;
         }
@@ -75,7 +78,7 @@ class HLSPlaylistExporter extends MediaExporter
         }
     }
 
-    protected function getMasterPlaylistContents(): string
+    protected function getMasterPlaylistContents()
     {
         $lines = ['#EXTM3U'];
 
@@ -89,7 +92,7 @@ class HLSPlaylistExporter extends MediaExporter
         return implode(PHP_EOL, $lines);
     }
 
-    public function savePlaylist(string $playlistPath): MediaExporter
+    public function savePlaylist(string $playlistPath)
     {
         $this->setPlaylistPath($playlistPath);
         $this->exportStreams();

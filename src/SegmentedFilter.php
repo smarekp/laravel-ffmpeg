@@ -21,7 +21,7 @@ class SegmentedFilter implements VideoFilterInterface
         $this->priority      = $priority;
     }
 
-    public function getPlaylistPath(): string
+    public function getPlaylistPath()
     {
         return $this->playlistPath;
     }

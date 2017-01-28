@@ -25,12 +25,12 @@ class FFMpeg
         $this->fromDisk(isset($ffmpegConfig['default_disk']) ? $ffmpegConfig['default_disk'] : $config->get('filesystems.default'));
     }
 
-    public static function getFilesystems(): Filesystems
+    public static function getFilesystems()
     {
         return static::$filesystems;
     }
 
-    public function fromDisk(string $diskName): FFMpeg
+    public function fromDisk(string $diskName)
     {
         $filesystem = static::getFilesystems()->disk($diskName);
         $this->disk = new Disk($filesystem);
@@ -38,7 +38,7 @@ class FFMpeg
         return $this;
     }
 
-    public function open($path): Media
+    public function open($path)
     {
         $file = $this->disk->newFile($path);
 

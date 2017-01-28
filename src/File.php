@@ -14,27 +14,27 @@ class File
         $this->path = $path;
     }
 
-    public function getDisk(): Disk
+    public function getDisk()
     {
         return $this->disk;
     }
 
-    public function getPath(): string
+    public function getPath()
     {
         return $this->path;
     }
 
-    public function getExtension(): string
+    public function getExtension()
     {
         return pathinfo($this->getPath())['extension'];
     }
 
-    public function getFullPath(): string
+    public function getFullPath()
     {
         return $this->getDisk()->getPath() . $this->getPath();
     }
 
-    public function put(string $localSourcePath): bool
+    public function put(string $localSourcePath)
     {
         $resource = fopen($localSourcePath, 'r');
 
