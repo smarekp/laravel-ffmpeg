@@ -5,9 +5,9 @@ This is a fork of [pascalbaljetmedia/laravel-ffmpeg](https://github.com/pascalba
 The following changes were made to make the package compatible with PHP 5.6:
 * Changed namespace to "Smarekp\LaravelFFMpeg".
 * Removed return type declarations.
-* Removed and replaced spaceship operators with PHP 5.6 equivalent.
 * Removed type-hinting of "string", "int", and "float" types.
-* Removedand and replaced null-coalescing operator with php 5.6 equivalent.
+* Removed and replaced spaceship operators with PHP 5.6 multiple ternary equivalent.
+* Removed and and replaced null-coalescing operators with php 5.6 isset() ternary equivalent.
 
 This package provides an integration with FFmpeg for Laravel 5.1 and higher. The storage of the files is handled by [Laravel's Filesystem](http://laravel.com/docs/5.1/filesystem).
 
